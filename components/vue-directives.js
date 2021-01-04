@@ -8,6 +8,9 @@ Vue.component('vue-directives', {
 	<DirectiveHtml/>
 	<DirectiveShow/>
 	<DirectiveIf/>
+	<DirectiveFor/>
+	<DirectiveOn/>
+	<DirectiveModel/>
 	</div>
 	`,
 data(){
@@ -25,5 +28,8 @@ components: {
 	DirectiveHtml,
 	DirectiveShow,
 	DirectiveIf,
+	DirectiveFor,
+	DirectiveOn,
+	DirectiveModel
 }
 })
