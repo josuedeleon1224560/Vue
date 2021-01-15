@@ -7,10 +7,14 @@
 </head>
 <body>
 	<div id="app">
+<p v-cloak > {{title}} </p>
 		<hello-world> </hello-world>
 		<vue-directives> </vue-directives>
 	</div>
 
+<style> [v-cloak] {
+  display: none; /*Elemento v-cloak funcional*/
+} </style>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 <script src="main.js"></script>
@@ -21,11 +25,19 @@
 <script src="components/DirectiveFor.js"></script>
 <script src="components/DirectiveOn.js"></script>
 <script src="components/DirectiveModel.js"></script>
+<script src="components/DirectiveOnce.js"></script>
+<script src="components/SlotComponents/buttonComp.js"></script>
+<script src="components/DirectiveSlot.js"></script>
 <script src="components/vue-directives.js"></script>
 
 <script>
 	let vm= new Vue({
 				el: '#app',
+				data(){
+					return {
+						title: 'Directivas Vue JS v-cloak',
+					}
+				}
 	})
 	
 </script>
