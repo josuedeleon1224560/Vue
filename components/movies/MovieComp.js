@@ -5,6 +5,7 @@ let MovieComp = {
 		<h2 v-text="title"></h2>
 		<img :src="cover" alt="ImagenDePelicula">
 			<p v-text="synopsis"></p>
+			<button @click="$emit('update:like', !like )" v-text="like ? 'Favoritas' : 'Agregar a Favoritas'"></button>
 			<hr>
 
 <!-- 	props: [
@@ -31,7 +32,23 @@ let MovieComp = {
 		cover: {
 	type: String,
 	required: true,
-	}  <!-- Segunda forma para recibir los props -->
-
+	},  <!-- Segunda forma para recibir los props -->
+		like: {
+	type: Boolean,
+	required: true,
+	default() {
+		return false
 }
+	}
+},
+			methods: {
+				toogleLike() {
+				<!-- this.like = !this.like -->
+					let data = {
+						id: this.id,
+						like: !this.like
+				}
+				this.$emit('toogleLike', data)
+			}
+		}
 }
